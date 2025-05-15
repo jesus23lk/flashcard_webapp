@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlashNow</title>
+  <link rel="stylesheet" href="../Stylesheets/global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&icon_names=add,delete,edit,keyboard_double_arrow_left,keyboard_double_arrow_right&display=block" rel="stylesheet" />
+<body data-page="home">
+  <header class="main-header">
+    <h1>Web Dev. Cards</h1>
+  </header>
+  <a href="../page_files/edit_cards.html" id="edit-link">  
+    <span class="material-symbols-outlined edit-icon">
+      edit
+    </span>
+  </a>
+  <div class="main-content" id="home-main-content">
+    <!-- Giant flash card at the top of the page-->
+    <div class="main-card"></div>
+    <div class="prev-next-btns">
+      <button id="prev-card">
+        <span class="material-symbols-outlined arrow-icon">
+          keyboard_double_arrow_left
+        </span>
+      </button>
+      <button id="card-num"></button>
+      <button id="next-card">
+        <span class="material-symbols-outlined arrow-icon">
+          keyboard_double_arrow_right
+        </span>
+      </button>
+    </div>
+    <!-- Message for errors, currently has no functionality-->
+    <div class="message-div hidden">
+      <p>Your card set is currently empty. Click below to add your first card!</p>
+    </div>
+    <!-- Container to hold all flashcards -->
+    <div class="flashcard-container"></div>
+    <!-- Container for submit & add buttons, submit button is hidden by default-->
+    <div class="add-card-container">
+      <button class="add-button">
+        <span class="material-symbols-outlined add-icon" style="font-variation-settings: 'wght' 500">
+          add
+        </span>  
+      </button>
+      <button class="submit-button">
+        submit
+      </button>
+    </div>
+  </div>
+  <!-- Logic for getting cards from DB using ajax -->
+  <script type="module" src="../js_files/main.js"></script>
+</body>
+</html>

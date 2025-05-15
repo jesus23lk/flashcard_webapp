@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit</title>
+  <link rel="stylesheet" href="../Stylesheets/global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body data-page="edit">
+  <div class="main-content" id="edit-main-content">
+    <div class="flashcard insert-card">
+      <div class="card-top">1</div>
+      <div class="card-bottom">
+        <form class="insert-card-form">
+          <div class="edit-term">
+            <textarea class="term-textarea" placeholder="term"></textarea>
+          </div>
+          <div class="edit-def">
+            <textarea class="def-textarea" placeholder="definition"></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src='../js_files/get_flashcards.js'></script>
+  <script src="../js_files/setup_textareas.js"></script>
+  <script>
+
+    /* TODO: write up some documentation on this because the solution was kind of a pain,
+       despite it being super simple.
+       
+       Also move this code to the setup_textareas.js file
+
+       oh and fix the bottom left and right corners of the form submission cards to make them rounded
+    */
+
+    const textarea = document.querySelector('.term-textarea');
+    
+    console.log('This script is running');
+
+    textarea.addEventListener('input', () => {
+
+      textarea.style.height = "1px";
+      textarea.style.height = (textarea.scrollHeight) + "px";
+    });
+  </script>
+</body>
+</html>

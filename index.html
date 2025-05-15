@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="./Stylesheets/global.css">
+  <link rel="stylesheet" href="./Stylesheets/home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&icon_names=add,close,delete,edit,keyboard_double_arrow_left,keyboard_double_arrow_right&display=block" rel="stylesheet" />
+<body>
+  <header class="main-header">
+    <h1>Home</h1>
+  </header>
+  <main>
+    <h2>Your Sets</h2>
+    <div class="set-container">
+      <button class="add-set-btn">
+        Create New
+      </button>
+    </div>
+    <!-- Modal used to add a new set to the page-->
+    <dialog class="add-set-modal">
+      <span class="material-symbols-outlined close-icon">close</span>
+      <form class="add-set-form">
+        <header>
+          <h2>Create a new Set</h2>
+          <button class="confirm-set-btn">Create and study</button>
+        </header>
+        <input type="text" name="set-name" placeholder="Name of set">
+      </form>
+    </dialog>
+  </main>
+  <script type="module" src="./js_files/home.js"></script>
+</body>
+</html>

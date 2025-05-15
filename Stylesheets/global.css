@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  /*if roboto is not available, sans-serif will be used */
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.5px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(235, 235, 235);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Styles for google icons*/
+.material-symbols-outlined {
+  color: white;
+}
+
+/* Divs that hold card action icons */
+.card-actions div {
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2em;
+}
+
+.card-actions div:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.main-header {
+  width: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(51, 51, 51);
+  position: fixed;
+  box-shadow: 5px 5px 15px rgb(80, 80, 80);
+  z-index: 5;
+}
+
+h1 {
+  display: flex;
+  color: white;
+  padding: 0.5rem;
+  padding-left: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.main-header * {
+  display: inline-block;
+}
+
+/* Link and button that takes user to edit page*/
+#edit-link {
+  /* background-color: rgb(97, 129, 255); */
+  background-color: rgb(37, 182, 39);
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 5px 5px 15px rgb(150, 150, 150);
+  transition-duration: 130ms;
+  position: fixed;
+  right: 20px;
+  top: 100px;
+}
+
+.edit-icon {
+  font-size: 1.5rem !important;
+}
+
+/* Div that contains flash cards */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 45%;
+  min-height: 100vh;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+#edit {
+  margin-right: 0.3em;
+}
+
+#add {
+  margin-left: 0.3em;
+}
+
+/* The main flash card that is being displayed on the page */
+.main-card {
+  margin-top: 30px;
+  width: 100%;
+  height: 60vh;
+  box-shadow: 5px 5px 15px rgb(150, 150, 150);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  cursor:pointer;
+  border-radius: 20px;
+  font-size: 2rem;
+  background-color: white;
+}
+
+.card-animation {
+  animation: 0.3s 1 alternate rotate, 0.4s 1 alternate fade-out;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from {transform: rotateY(0deg)}
+  to {transform: rotateY(180deg)}
+}
+
+@keyframes fade-out {
+  0% {color: black;}
+  50% { color: white;}
+  100% { color: white; }
+}
+
+/* Div that holds previous and next card buttons */
+.prev-next-btns {
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.prev-next-btns button {
+  border: none;
+  height: 40px;
+  width: 80px;
+  box-shadow: 5px 5px 15px rgb(150, 150, 150);
+  cursor: pointer;
+  /* background-color: rgb(97, 129, 255); */
+  background-color: rgb(37, 182, 39);
+  color: white;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 130ms;
+}
+
+.arrow-icon {
+  font-size: 1.8rem !important;
+}
+
+#prev-card {
+  margin-right: 16px;
+  border-radius: 18px 6px 6px 18px;
+}
+
+#next-card {
+  margin-left: 16px;
+  border-radius: 6px 18px 18px 6px;
+}
+
+/* button that shows the number of the card we are on */
+#card-num {
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-radius: 6px;
+}
+
+#next-card:hover, #prev-card:hover, #edit-link:hover {
+  transform: scale(1.1);
+  /* background-color: rgb(51, 91, 252); */
+  background-color: rgb(31, 153, 33);
+}
+
+.flashcard-container {
+  width: 100%;
+}
+
+.flashcard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 15px rgb(150, 150, 150);
+  background-color: rgb(204, 204, 204);
+  border-radius: 10px 10px 10px  10px;
+  font-size: 1rem;
+  font-weight: 300;
+  font-size: 1.1rem !important;
+}
+
+.message-div {
+  display: flex;
+  margin: 2.5em 0 1em 0;
+  padding: 1.6em;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgb(150, 150, 150);
+  width: 100%;
+}
+
+.message-div p {
+  font-size: 1.1rem;
+}
+
+.delete-card-icon, .edit-card-icon {
+  cursor: pointer;
+  color: black;
+  font-variation-settings: 'wght' 250;
+}
+
+/* Context menu to confirm deletion of a card */
+.delete-context {
+  display: none;
+  width: 25%;
+  right: -27%;
+  top: 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px rgb(150, 150, 150);
+  position: absolute;
+  text-align: center;
+  padding: 0.5em;
+  font-size: 1.1rem;
+}
+
+.delete-context button {
+  font-size: 1rem;
+  padding: 0.2em 0.7em;
+  height: 50%;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 0.4em;
+}
+
+.delete-card-btn {
+  color: white;
+  background-color: rgb(255, 46, 46);
+  margin-right: 0.25em;
+}
+
+.cancel-delete-btn {
+  color: white;
+  background-color: rgb(104, 104, 104);
+  margin-left: 0.25em;
+}
+
+.card-top {
+  position: relative;
+  background-color: white;
+  border-radius: 10px 10px 0  0;
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+}
+
+.card-bottom {
+  justify-content: space-between;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+}
+
+/* When our edit form is visible, we want to remove the border radius */
+.card-bottom.edit {
+  border-radius: 0;
+}
+
+/* This div only shows up when user clicks on a crad to edit it */
+.confirm-cancel-changes {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 0 10px 10px;
+  gap: 0.5em;
+  padding: 0.5em;
+}
+
+.confirm-cancel-changes button {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em;
+  width: 15%;
+}
+
+.confirm-edit-btn {
+  background-color: rgb(37, 182, 39);
+}
+
+.cancel-edit-btn {
+  background-color: rgb(104, 104, 104);
+}
+
+
+.term {
+  width: 20%;
+  border-radius: 0 0 0 10px;
+  padding: 0.5em;
+}
+
+.definition {
+  width: 80%; 
+  border-radius: 0 0 10px 0;
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+
+.term, .definition {
+  background-color: white;
+}
+
+.insert-card-form {
+  width: 100%;
+  display: flex;
+}
+
+.edit-term, .edit-def {
+  width: 50%;
+  padding: 0.4rem;
+  background-color: white;
+}
+
+.edit-term {
+  border-radius: 0 0 0 10px;
+}
+
+.edit-def {
+  border-radius: 0 0 10px 0;
+}
+
+.term-textarea, .def-textarea {
+  width: 100%;
+  padding: 0.1rem;
+  resize: none;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  overflow: hidden;
+  height: 27px;
+  border-bottom: 2px solid black;
+}
+
+/* Container holding add card button */
+.add-card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Styles the add button */
+.add-card-container button {
+  padding: 0.5em;
+  border: none;
+  background-color: rgb(37, 182, 39);
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px rgb(150, 150, 150);
+  color: white;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+}
+
+.submit-button {
+  width: 80px;
+  height: 50px;
+  font-size: 1.2rem;
+  display: none;
+}
+
+.add-icon {
+}
+
+/* class used to hide elements */
+.hidden {
+  display: none;
+}
